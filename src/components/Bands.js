@@ -9,7 +9,7 @@ export default class Bands extends React.Component {
         return(
             <div>
                 <ul>
-                    {this.props.bands.map(band => <Band key={band.id} band={band} />)}
+                    {this.props.bands.map(band => <Band deleteBand={this.props.deleteBand} key={band.id} {...band} />)}
                 </ul>
             </div>
         )
