@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 
 class Band extends Component {
 
+  handleClick = () => {
+    const {deleteBand, id} = this.props
+    deleteBand(id)
+  }
+
   render() {
+    console.log(this.props)
     return(
-      <div>
-        Band Component
-      </div>
+        <li>
+          {this.props.name}<button onClick={this.handleClick}>Delete</button>
+        </li>
     );
   }
 };
