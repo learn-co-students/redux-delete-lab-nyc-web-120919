@@ -3,9 +3,11 @@ export default function manageBand(state = {
 }, action) {
   switch (action.type) {
     case 'ADD_BAND':
+      const band = { id: Math.random(), name: action.name }
+      return { ...state, bands: [...state.bands, band] }
 
-      return { ...state, bands: [...state.bands, action.name] }
-
+    case 'DELETE_BAND':
+      console.log('deleting band', action)  
     default:
       return state;
   }
